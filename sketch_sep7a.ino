@@ -1,9 +1,10 @@
 // Libreria del sensor de temperatura
-// Libreria del sensor de temperatura
 #include <DHT.h>
 
+// Pin en la placa del sesnor de temperatura
 #define DHTPIN 2
 
+// Tipo de sensor de temperatura
 #define DHTTYPE DHT11
 
 
@@ -11,9 +12,10 @@
 DHT dht(DHTPIN, DHTTYPE);
 
 void setup() {
-  // put your setup code here, to run once:
+  // Inicializacion de el puerto serial del arduino 
   Serial.begin(9600);
   
+  // Inicializacion de la recoleccion de datos del sensior
   dht.begin();
 }
 
@@ -21,7 +23,7 @@ void loop() {
 
   delay(5000);  // Espera 5 segundos entre lecturas
 
-  // put your main code here, to run repeatedly:
+  // Guardado de los datos en variables
   float t = dht.readTemperature();
   float h = dht.readHumidity();
 
